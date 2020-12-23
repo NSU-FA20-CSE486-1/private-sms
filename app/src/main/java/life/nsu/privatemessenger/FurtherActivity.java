@@ -1,5 +1,6 @@
 package life.nsu.privatemessenger;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class FurtherActivity extends AppCompatActivity {
     TextView mCypher;
     Button mSend;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,10 @@ public class FurtherActivity extends AppCompatActivity {
 
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
         String message = getIntent().getStringExtra("cypher");
-        String secretKey = getIntent().getStringExtra("secret");
+        int secretKey = getIntent().getIntExtra("secret", 0);
+
+        mCypher.setText(secretKey+" "+message);
+
 
         mSend.setOnClickListener(view -> {
             //ToDo
