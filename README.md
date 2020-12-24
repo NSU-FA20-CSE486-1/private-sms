@@ -4,4 +4,4 @@ Create a text application that sends encrypted text using standard SMS applicati
 
 > Demo
 
->[](demo.gif)
+![](demo.gif)
